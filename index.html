@@ -57,15 +57,15 @@
 	text-shadow:0 0 8px #0007;
     }
 
-    //@media (max-width:320px){      /* keep text from falling off on phones */
-      //.hero{height:200vh;}
-      //.hero__blurb{
-	//top:50%;
-	//right:3rem;
-	//transform:translateY(-50%);
-	//text-align:right;
-      //}
-    //}
+    @media (max-width:320px){      /* keep text from falling off on phones */
+      .hero{height:60vh;}
+      .hero__blurb{
+	top:60%;
+	right:3rem;
+	transform:translate(50%,-50%);
+	text-align:center;
+      }
+    }
 
     /* CONTACT SPLIT */
     .contact {
@@ -88,7 +88,7 @@
     .contact__info h2{
         font-family:"Charm",serif;
 	font-weight:600;
-        font-size:clamp(1.8rem,4vw,12rem);
+        font-size:clamp(1.8rem,10vw,6rem); //4vw, 3rem
 	font-style: italic;
 	margin-bottom:1.5rem;
     }
@@ -130,7 +130,7 @@
   <!-- CONTACT -->
   <section class="contact">
     <div class="contact__info">
-      <h2>Contact&nbsp;Me v2</h2>
+      <h2>Contact&nbsp;Me v3</h2>
       <p>Email:
 	<a style="color:#f8f8f8;text-decoration:underline;">cecesjoquist@gmail.com </a>
 	</p>
