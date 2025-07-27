@@ -72,3 +72,39 @@ li {
 a:hover {
   text-decoration: underline;
 }
+
+/* Mobile styles: make layout consistent across devices */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    white-space: normal;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* stack modules vertically */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  a {
+    font-size: 20px;
+  }
+
+  li {
+    font-size: 18px;
+  }
+}
+
