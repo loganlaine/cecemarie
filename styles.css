@@ -73,6 +73,57 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Contact form styles */
+.form-intro {
+  color: #fff;
+  font-size: 22px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 100;
+  font-size: 20px;
+  color: #fff;
+  text-align: left;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  background-color: #fff;
+  color: #ff7b54;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #ffe3d3;
+}
+
+
 /* Mobile styles: make layout consistent across devices */
 @media (max-width: 768px) {
   body {

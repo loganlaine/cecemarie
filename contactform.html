@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="/styles.css" />
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+<body>
+  <h1>Stay in the Loop</h1>
+  <p>If you would like to be added to my bi-weekly email list, please fill in the information below.</p>
+
+  <form action="https://formsubmit.co/your@email.com" method="POST">
+    <label for="first-name">First Name</label>
+    <input type="text" id="first-name" name="first name" required />
+
+    <label for="last-name">Last Name</label>
+    <input type="text" id="last-name" name="last name" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required />
+
+    <!-- Optional redirect after submit -->
+    <input type="hidden" name="_redirect" value="https://cecemaire.com/thank-you.html">
+    <!-- Optional: disable captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Subscribe</button>
+  </form>
+</body>
+</html>
