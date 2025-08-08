@@ -36,6 +36,14 @@ h1 {
   font-style: italic;
   color: #fff;
   border-radius: 5px;
+  text-align: center;
+}
+
+.module img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 img {
