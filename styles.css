@@ -1,4 +1,5 @@
-/* styles.css */
+/* styles_with_downloads.css */
+/* --- Base / Existing styles (cleaned) --- */
 
 body {
   background: radial-gradient(#ffb67a, #ffc5bf);
@@ -32,7 +33,7 @@ h1 {
 
 .module {
   font-size: 20px;
-  Font-weight: 100;
+  font-weight: 100; /* fixed casing */
   font-style: italic;
   color: #fff;
   border-radius: 5px;
@@ -56,7 +57,7 @@ img {
 a {
   color: #fff;
   font-size: 25px;
-  Font-weight: 100;
+  font-weight: 100; /* fixed casing */
   display: block;
   margin-top: 5px;
   text-decoration: none;
@@ -69,7 +70,8 @@ ul {
   text-align: left;
   padding-left: 100px; /* about 1 inch on most screens */
   max-width: 600px;
-  //margin: 0 auto; /* center the whole block horizontally */
+  /* removed invalid '//' CSS comment */
+  /* margin: 0 auto;  center the whole block horizontally if desired */
 }
 
 li {
@@ -171,8 +173,60 @@ a.button:hover {
   background-color: #ffe3d3;
 }
 
+/* --- New: Download row + button styles --- */
 
-/* Mobile styles: make layout consistent across devices */
+.download-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* prevents overflow on small screens */
+  margin: 0.5rem 0;
+}
+
+.download-row .download-link {
+  white-space: nowrap; /* keep the title on one line when there is room */
+}
+
+a[download],
+.download-btn {
+  display: inline-block;
+  background-color: white;
+  color: #ffb67a;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;      /* removes the outline look from <button> */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+a[download]:hover,
+.download-btn:hover {
+  background-color: #ffe3d3;
+}
+
+a[download]:active,
+.download-btn:active {
+  transform: translateY(1px);
+}
+
+/* Keyboard focus visibility for accessibility */
+a[download]:focus-visible,
+.download-btn:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  a[download],
+  .download-btn {
+    transition: none;
+  }
+}
+
+/* --- Mobile styles: make layout consistent across devices --- */
 @media (max-width: 768px) {
   body {
     padding: 20px;
@@ -205,5 +259,15 @@ a.button:hover {
   li {
     font-size: 18px;
   }
-}
 
+  /* Ensure download rows look good on phones */
+  .download-row {
+    gap: 12px;
+  }
+
+  a[download],
+  .download-btn {
+    font-size: 16px; /* slightly larger tap target text on mobile */
+    padding: 10px 16px;
+  }
+}

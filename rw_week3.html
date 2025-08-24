@@ -5,37 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Radiant Woman Vault - Module 3</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .dl-btn {
-      background-color: white; color: #ffb67a; padding: 4px 8px;
-      border-radius: 5px; text-decoration: none; font-size: 14px;
-      border: 1px solid #ffb67a; cursor: pointer;
-    }
-    .row { display: flex; align-items: center; gap: 20px; }
-  </style>
-  <script>
-    async function forceDownload(url, filename) {
-      try {
-        // Encode spaces and special characters just in case
-        const safeUrl = encodeURI(url);
-        const res = await fetch(safeUrl, { credentials: "same-origin" });
-        if (!res.ok) throw new Error("Network response was not ok");
-        const blob = await res.blob();
-        const objUrl = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = objUrl;
-        a.download = filename || url.split('/').pop();
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(objUrl);
-      } catch (err) {
-        alert("Download failed. This can happen if the file is hosted on a different domain that blocks downloads. " +
-              "If you're using GitHub (blob/raw links), switch to GitHub Pages or keep the PDFs in this site.");
-        console.error(err);
-      }
-    }
-  </script>
 </head>
 <body>
   <h1>Radiant Woman Vault<br>Module 3</h1>
@@ -44,20 +13,16 @@
     <li><a href="https://youtu.be/x5qgiCHoPtI" target="_blank">Watch The Replay</a></li>
 
     <li>
-      <div class="row">
-        <a href="CleanFifteen.pdf" target="_blank" style="white-space: nowrap;">
-          Clean Fifteen
-        </a>
-        <button class="dl-btn" onclick="forceDownload('CleanFifteen.pdf','CleanFifteen.pdf')">Download</button>
+      <div class="download-row">
+        <a class="download-link" href="CleanFifteen.pdf" target="_blank">Clean Fifteen</a>
+        <a href="CleanFifteen.pdf" download="CleanFifteen.pdf">Download</a>
       </div>
     </li>
 
     <li>
-      <div class="row">
-        <a href="High%20Protein%20Breakfast%20Ideas.pdf" target="_blank" style="white-space: nowrap;">
-          High Protein Breakfast Ideas
-        </a>
-        <button class="dl-btn" onclick="forceDownload('High%20Protein%20Breakfast%20Ideas.pdf','High Protein Breakfast Ideas.pdf')">Download</button>
+      <div class="download-row">
+        <a class="download-link" href="High%20Protein%20Breakfast%20Ideas.pdf" target="_blank">High Protein Breakfast Ideas</a>
+        <a href="High%20Protein%20Breakfast%20Ideas.pdf" download="High Protein Breakfast Ideas.pdf">Download</a>
       </div>
     </li>
   </ul>
